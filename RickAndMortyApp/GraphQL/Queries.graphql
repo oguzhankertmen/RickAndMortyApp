@@ -1,0 +1,10 @@
+query FetchAllCharacters{
+  characters{
+	results{
+	  name
+	  species
+	  gender
+	  image
+	}
+  }
+}
