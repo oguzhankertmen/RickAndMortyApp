@@ -8,6 +8,6 @@
 import Foundation
 
 struct Characters: Codable {
-    
+
     var results: [Character]
 }
