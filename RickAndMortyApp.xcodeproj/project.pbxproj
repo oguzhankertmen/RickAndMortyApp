@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		474A3834282E800D00CD0EF7 /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474A3833282E800D00CD0EF7 /* CharacterModel.swift */; };
 		474A383C282E9AF000CD0EF7 /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 474A383B282E9AF000CD0EF7 /* KingfisherSwiftUI */; };
-		474A383E28323C0F00CD0EF7 /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474A383D28323C0F00CD0EF7 /* CharacterDetailView.swift */; };
+		474A38402832698C00CD0EF7 /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474A383F2832698C00CD0EF7 /* CharacterDetailView.swift */; };
 		4784D75328291A6D00DDF81A /* RickAndMortyAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4784D75228291A6D00DDF81A /* RickAndMortyAppApp.swift */; };
 		4784D75528291A6D00DDF81A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4784D75428291A6D00DDF81A /* ContentView.swift */; };
 		4784D75728291A6F00DDF81A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4784D75628291A6F00DDF81A /* Assets.xcassets */; };
@@ -44,7 +44,7 @@
 
 /* Begin PBXFileReference section */
 		474A3833282E800D00CD0EF7 /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
-		474A383D28323C0F00CD0EF7 /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
+		474A383F2832698C00CD0EF7 /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
 		4784D74F28291A6D00DDF81A /* RickAndMortyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMortyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4784D75228291A6D00DDF81A /* RickAndMortyAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyAppApp.swift; sourceTree = "<group>"; };
 		4784D75428291A6D00DDF81A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -171,7 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				4784D75428291A6D00DDF81A /* ContentView.swift */,
-				474A383D28323C0F00CD0EF7 /* CharacterDetailView.swift */,
+				474A383F2832698C00CD0EF7 /* CharacterDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -192,6 +192,7 @@
 			buildConfigurationList = 4784D77328291A7000DDF81A /* Build configuration list for PBXNativeTarget "RickAndMortyApp" */;
 			buildPhases = (
 				47BE105728294A5E0091FDE2 /* Generate Apollo GraphQL API */,
+				479F0AEF2833AE6700D8B48F /* Run SwiftLint */,
 				4784D74B28291A6D00DDF81A /* Sources */,
 				4784D74C28291A6D00DDF81A /* Frameworks */,
 				4784D74D28291A6D00DDF81A /* Resources */,
@@ -321,6 +322,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		479F0AEF2833AE6700D8B48F /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint --fix && swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		47BE105728294A5E0091FDE2 /* Generate Apollo GraphQL API */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -349,7 +368,7 @@
 				4784D75528291A6D00DDF81A /* ContentView.swift in Sources */,
 				47BE1056282948940091FDE2 /* Apollo.swift in Sources */,
 				47BE1062282A868B0091FDE2 /* RickAndMortyViewModel.swift in Sources */,
-				474A383E28323C0F00CD0EF7 /* CharacterDetailView.swift in Sources */,
+				474A38402832698C00CD0EF7 /* CharacterDetailView.swift in Sources */,
 				474A3834282E800D00CD0EF7 /* CharacterModel.swift in Sources */,
 				47BE105928294B600091FDE2 /* API.swift in Sources */,
 				4784D75328291A6D00DDF81A /* RickAndMortyAppApp.swift in Sources */,
