@@ -13,7 +13,10 @@ struct CharacterDetailView: View {
     let character: CharacterModel
     
     var body: some View {
+        
+        Text(character.name).bold()
         List {
+            
             Section(header: Text("Profile")) {
                 HStack {
                     Spacer()
