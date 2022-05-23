@@ -35,6 +35,11 @@ struct CharacterDetailView: View {
                     Spacer()
                 }
             }
+            
+            Section(header: Text("Info")){
+                
+            }
+                
         }
     }
 }
