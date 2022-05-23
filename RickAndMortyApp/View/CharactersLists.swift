@@ -8,7 +8,7 @@
 import SwiftUI
 import KingfisherSwiftUI
 
-struct ContentView: View {
+struct CharactersList: View {
 
     @StateObject var viewModel = CharacterViewModel()
 
@@ -24,12 +24,12 @@ struct ContentView: View {
                         label: {
                             CharacterListRowView(character: character)
                         } )
-
+                    
                 }
 
             }.listStyle(DefaultListStyle())
             .navigationBarTitle("Characters")
-
+            
         }
 
     }
@@ -37,6 +37,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        CharactersList()
     }
 }
