@@ -1,11 +1,11 @@
 query FetchAllCharacters{
-  characters{
-	results{
-	  name
-	  species
-	  gender
-	  status
-	  image
+	characters{
+		results{
+			name
+			species
+			gender
+			status
+			image
+		}
 	}
-  }
 }

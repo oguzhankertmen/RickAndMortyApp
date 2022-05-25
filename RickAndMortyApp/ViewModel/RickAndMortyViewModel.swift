@@ -11,7 +11,7 @@ import Apollo
 class CharacterViewModel: ObservableObject {
 
     @Published var characters: [CharacterModel] = []
-    
+
     func fetchCharacters() {
 
         Network.shared.apollo.fetch(query: FetchAllCharactersQuery()) { [weak self] result in

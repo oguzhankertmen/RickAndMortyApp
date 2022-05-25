@@ -21,7 +21,7 @@ struct TabbarView: View {
         }
         .accentColor(.green)
     }
-    
+
 }
 
 struct TabbarView_Previews: PreviewProvider {

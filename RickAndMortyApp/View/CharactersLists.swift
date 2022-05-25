@@ -9,34 +9,34 @@ import SwiftUI
 import KingfisherSwiftUI
 
 struct CharactersList: View {
-
-    @StateObject var viewModel = CharacterViewModel()
-
-    var body: some View {
-
-        NavigationView {
-
-            List {
-                
-                ForEach(viewModel.characters, id: \.name) { character in
-                    NavigationLink(
-                        destination: CharacterDetailView(character: character),
-                        label: {
-                            CharacterListRowView(character: character)
-                        })
-                    
-                }
-
-            }.listStyle(PlainListStyle())
-            .navigationBarTitle("Characters")
-            
+  
+  @StateObject var viewModel = CharacterViewModel()
+  
+  var body: some View {
+    
+    NavigationView {
+      
+      List {
+        
+        ForEach(viewModel.characters, id: \.name) { character in
+          NavigationLink(
+            destination: CharacterDetailView(character: character),
+            label: {
+              CharacterListRowView(character: character)
+            })
+          
         }
-
+        
+      }.listStyle(PlainListStyle())
+        .navigationBarTitle("Characters")
+      
     }
+    
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        CharactersList()
-    }
+  static var previews: some View {
+    CharactersList()
+  }
 }

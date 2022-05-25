@@ -10,11 +10,11 @@ import KingfisherSwiftUI
 
 struct CharacterListRowView: View {
     let character: CharacterModel
-    
+
     @StateObject var viewModel = CharacterViewModel()
 
     var body: some View {
-        
+
             HStack {
             if let image = character.image,
                let url = URL(string: image) {
@@ -28,7 +28,7 @@ struct CharacterListRowView: View {
                     .frame(width: 50, height: 50)
                     .foregroundColor(.gray)
             }
-                
+
                 VStack(alignment: .leading) {
                 Text(character.name )
                     .font(.title3)
@@ -36,7 +36,7 @@ struct CharacterListRowView: View {
                     .redacted(reason: character.name == nil ? .placeholder : [])
 
             }
-            
+
         }
     }
 }
