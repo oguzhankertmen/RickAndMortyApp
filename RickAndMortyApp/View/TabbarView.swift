@@ -8,24 +8,24 @@
 import SwiftUI
 
 struct TabbarView: View {
-    var body: some View {
-        TabView {
-            CharactersList()
-                .tabItem {
-                    Label("Characters", systemImage: "person.3")
-                }
-            SearchView()
-                .tabItem {
-                    Label("Search", systemImage: "magnifyingglass")
-                }
+  var body: some View {
+    TabView {
+      CharactersList()
+        .tabItem {
+          Label("Characters", systemImage: "person.3")
         }
-        .accentColor(.green)
+      SearchView()
+        .tabItem {
+          Label("Search", systemImage: "magnifyingglass")
+        }
     }
-
+    .accentColor(.green)
+  }
+  
 }
 
 struct TabbarView_Previews: PreviewProvider {
-    static var previews: some View {
-        TabbarView()
-    }
+  static var previews: some View {
+    TabbarView()
+  }
 }
