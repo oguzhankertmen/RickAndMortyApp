@@ -36,7 +36,10 @@ struct CharacterDetailView: View {
                 }
             }
             
-            Section(header: Text("Info")){
+            Section(header: Text("Info")) {
+                InfoRowView(label: "Species", icon: "ladybug", value: character.species)
+                InfoRowView(label: "Gender", icon: "arrow.up.forward.circle", value: character.gender)
+                InfoRowView(label: "Status", icon: "waveform.path.ecg", value: character.status)
                 
             }
                 
@@ -44,8 +47,12 @@ struct CharacterDetailView: View {
     }
 }
 
-struct CharacterDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        CharacterDetailView(character: CharacterModel(result: FetchAllCharactersQuery.Data.Character.Result?.init(FetchAllCharactersQuery.Data.Character.Result.init(name: "Pickle Rick", species: "Pickle", gender: "Male", image: "https://cdn.wannart.com/production/post/2018/09/https-blueprint-api-production.s3.amazonaws.com-uploads-card-image-559122-6a39f256-fa39-414b-a29c-a9b52bd9c049.png"))))
-    }
-}
+//struct CharacterDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CharacterDetailView(character:
+//            CharacterModel(result: FetchAllCharactersQuery.Data.Character.Result?
+//            .init(FetchAllCharactersQuery.Data.Character.Result
+//                .init(name: "Pickle Rick", species: "Pickle", gender: "Male", image: ""))))
+//                      
+//    }
+//}

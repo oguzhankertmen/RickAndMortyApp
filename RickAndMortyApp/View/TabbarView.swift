@@ -11,11 +11,11 @@ struct TabbarView: View {
     var body: some View {
         TabView {
             CharactersList()
-                .tabItem{
+                .tabItem {
                     Label("Characters", systemImage: "person.3")
                 }
             SearchView()
-                .tabItem{
+                .tabItem {
                     Label("Search", systemImage: "magnifyingglass")
                 }
         }
