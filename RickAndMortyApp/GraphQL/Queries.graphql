@@ -4,6 +4,7 @@ query FetchAllCharacters{
 	  name
 	  species
 	  gender
+	  status
 	  image
 	}
   }

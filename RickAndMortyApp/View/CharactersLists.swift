@@ -23,11 +23,11 @@ struct CharactersList: View {
                         destination: CharacterDetailView(character: character),
                         label: {
                             CharacterListRowView(character: character)
-                        } )
+                        })
                     
                 }
 
-            }.listStyle(DefaultListStyle())
+            }.listStyle(PlainListStyle())
             .navigationBarTitle("Characters")
             
         }
