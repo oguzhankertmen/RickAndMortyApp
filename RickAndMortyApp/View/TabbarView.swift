@@ -10,18 +10,18 @@ import SwiftUI
 struct TabbarView: View {
   var body: some View {
     TabView {
-      CharactersList()
+      CharacterListView()
         .tabItem {
-          Label("Characters", systemImage: "person.3")
+          Label("Characters", systemImage: "person.2.crop.square.stack")
         }
-      SearchView()
+      EpisodeListView()
         .tabItem {
-          Label("Search", systemImage: "magnifyingglass")
+          Label("Episodes", systemImage: "play.rectangle")
         }
     }
     .accentColor(.green)
   }
-  
+
 }
 
 struct TabbarView_Previews: PreviewProvider {
