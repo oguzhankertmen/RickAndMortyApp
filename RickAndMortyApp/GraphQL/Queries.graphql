@@ -9,3 +9,13 @@ query FetchAllCharacters{
 		}
 	}
 }
+
+query GetEpisodes {
+	episodes{
+		results{
+			id
+			name
+			air_date
+		}
+	}
+}
