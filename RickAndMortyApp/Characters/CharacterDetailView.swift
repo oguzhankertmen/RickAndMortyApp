@@ -9,14 +9,10 @@ import SwiftUI
 import KingfisherSwiftUI
 
 struct CharacterDetailView: View {
-  
   let character: CharacterModel
-  
   var body: some View {
-    
     Text(character.name).bold()
     List {
-      
       Section(header: Text("Profile")) {
         HStack {
           Spacer()
@@ -35,14 +31,11 @@ struct CharacterDetailView: View {
           Spacer()
         }
       }
-      
       Section(header: Text("Info")) {
         InfoRowView(label: "Species", icon: "ladybug", value: character.species)
         InfoRowView(label: "Gender", icon: "arrow.up.forward.circle", value: character.gender)
         InfoRowView(label: "Status", icon: "waveform.path.ecg", value: character.status)
-        
       }
-      
     }
   }
 }
