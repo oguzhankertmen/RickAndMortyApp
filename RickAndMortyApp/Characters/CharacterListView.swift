@@ -9,9 +9,9 @@ import SwiftUI
 import KingfisherSwiftUI
 
 struct CharacterListView: View {
-  
+
   @StateObject var viewModel = CharacterService()
-  
+
   var body: some View {
     NavigationView {
       List {
