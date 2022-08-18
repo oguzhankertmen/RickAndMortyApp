@@ -5,15 +5,15 @@
 //  Created by Oğuzhan KERTMEN on 16.05.2022.
 //
 
-import SwiftUI
 import KingfisherSwiftUI
+import SwiftUI
 
 struct CharacterDetailView: View {
-  let character: CharacterModel
+  let character: CharacterResponseDTO.Character
   var body: some View {
-    Text(character.name).bold()
+    Text(character.name ?? "").bold()
     List {
-      Section(header: Text("Profile")) {
+      Section(header: Text("PROFILE")) {
         HStack {
           Spacer()
           if let image = character.image,
@@ -31,10 +31,17 @@ struct CharacterDetailView: View {
           Spacer()
         }
       }
-      Section(header: Text("Info")) {
-        InfoRowView(label: "Species", icon: "ladybug", value: character.species)
-        InfoRowView(label: "Gender", icon: "arrow.up.forward.circle", value: character.gender)
-        InfoRowView(label: "Status", icon: "waveform.path.ecg", value: character.status)
+      Section(header: Text("INFO")) {
+        InfoRowView(label: "Species", icon: "ladybug", value: character.species ?? "")
+        InfoRowView(label: "Gender", icon: "arrow.up.forward.circle", value: character.gender ?? "")
+        InfoRowView(label: "Status", icon: "waveform.path.ecg", value: character.status ?? "")
+        InfoRowView(label: "Location", icon: "globe.americas.fill", value: character.location.name ?? "")
+        InfoRowView(label: "Origin", icon: "globe.americas.fill", value: character.origin.dimension ?? "")
+      }
+      Section(header: Text("EPISODES")) {
+        ForEach(character.episode, id: \.id) { item in
+          Text(item.name ?? "")
+        }
       }
     }
   }
@@ -46,6 +53,6 @@ struct CharacterDetailView: View {
 //            CharacterModel(result: FetchAllCharactersQuery.Data.Character.Result?
 //            .init(FetchAllCharactersQuery.Data.Character.Result
 //                .init(name: "Pickle Rick", species: "Pickle", gender: "Male", image: ""))))
-//                      
+//
 //    }
 // }

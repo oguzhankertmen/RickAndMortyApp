@@ -5,23 +5,50 @@
 //  Created by Oğuzhan KERTMEN on 13.05.2022.
 //
 
+import Apollo
 import Foundation
 
-struct CharacterModel {
+public struct CharacterResponseDTO {
+  public let info: Info
+  public let results: [Character]
 
-  var name: String
-  var species: String
-  var gender: String
-  var status: String
-  var image: String
+  public struct Info {
+    public let count: Int?
+    public let pages: Int?
+    public let next: Int?
+    public let prev: Int?
+  }
 
-  init(result: FetchAllCharactersQuery.Data.Character.Result?) {
+  public struct Character {
+    public let id: GraphQLID
+    public let name: String?
+    public let status: String?
+    public let species: String?
 
-    name = result?.name ?? "-"
-    species = result?.species ?? "-"
-    gender = result?.gender ?? "-"
-    status = result?.status ?? "-"
-    image = result?.image ?? "-"
+    public let gender: String?
+    public let origin: Origin
+    public let location: Location
+    public let image: String?
+    public let episode: [Episode]!
+    public let created: String?
+  }
 
+  public struct Origin {
+    public let id: GraphQLID
+    public let name: String?
+    public let dimension: String?
+  }
+
+  public struct Location {
+    public let id: GraphQLID
+    public let name: String?
+    public let dimension: String?
+  }
+
+  public struct Episode {
+    public let id: GraphQLID
+    public let name: String?
+    public let airDate: String?
+    public let episode: String?
   }
 }
