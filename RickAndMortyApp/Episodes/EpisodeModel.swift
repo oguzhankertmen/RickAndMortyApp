@@ -5,16 +5,32 @@
 //  Created by Oğuzhan KERTMEN on 29.05.2022.
 //
 
+import Apollo
 import Foundation
 
-struct EpisodeModel {
-  var id: String
-  var name: String
-  var air_date: String
+public struct EpisodeResponseDTO {
+  public let info: Info
+  public let results: [Episode]
 
-  init(result: GetEpisodesQuery.Data.Episode.Result?) {
-    id = result?.id ?? "-"
-    name = result?.name ?? "-"
-    air_date = result?.airDate ?? "-"
+  public struct Info {
+    public let count: Int?
+    public let pages: Int?
+    public let next: Int?
+    public let prev: Int?
+  }
+
+  public struct Episode {
+    public let id: GraphQLID
+    public let name: String?
+    public let airDate: String?
+    public let episode: String?
+    public let characters: [Character]!
+    public let created: String?
+  }
+
+  public struct Character {
+    public let id: GraphQLID
+    public let name: String?
+    public let image: String?
   }
 }
