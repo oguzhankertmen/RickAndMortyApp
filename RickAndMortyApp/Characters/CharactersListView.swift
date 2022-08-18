@@ -5,26 +5,27 @@
 //  Created by Oğuzhan KERTMEN on 9.05.2022.
 //
 
-import SwiftUI
 import KingfisherSwiftUI
+import SwiftUI
 
 struct CharacterListView: View {
-
-  @StateObject var viewModel = CharacterService()
+  @ObservedObject var viewModel = CharactersViewModel(charactersApi: CharactersService())
 
   var body: some View {
     NavigationView {
       List {
-        ForEach(viewModel.characters, id: \.name) { character in
+        ForEach(viewModel.charactersArray, id: \.id) { character in
           NavigationLink(
             destination: CharacterDetailView(character: character),
             label: {
               CharacterListRowView(character: character)
-            })
+            }
+          )
         }
       }.listStyle(PlainListStyle())
+
         .navigationBarTitle("Characters")
-    }
+    }.onAppear(perform: viewModel.getCharacters)
   }
 }
 
