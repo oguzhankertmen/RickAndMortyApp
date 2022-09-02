@@ -1,21 +1,84 @@
-query FetchAllCharacters{
-	characters{
-		results{
+query GetCharacters {
+	characters {
+		info {
+			count
+			pages
+			next
+			prev
+		}
+		results {
+			id
 			name
-			species
-			gender
 			status
+			species
+			type
+			gender
+			origin {
+				id
+				name
+				dimension
+			}
+			location {
+				id
+				name
+				type
+				dimension
+				
+			}
 			image
+			episode {
+				id
+				name
+				air_date
+				episode
+			}
+			created
 		}
 	}
 }
 
 query GetEpisodes {
 	episodes{
+		info {
+			count
+			pages
+			next
+			prev
+		}
 		results{
 			id
 			name
 			air_date
+			episode
+			characters {
+				id
+				name
+				image
+			}
+			created
+		}
+	}
+}
+
+query GetLocations {
+	locations {
+		info{
+			count
+			pages
+			next
+			prev
+		}
+		results {
+			id
+			name
+			type
+			dimension
+			residents {
+				id
+				name
+				image
+			}
+			created
 		}
 	}
 }

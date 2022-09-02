@@ -5,15 +5,14 @@
 //  Created by Oğuzhan KERTMEN on 18.05.2022.
 //
 
-import SwiftUI
 import KingfisherSwiftUI
+import SwiftUI
 
 struct CharacterListRowView: View {
-  let character: CharacterModel
+  let character: CharacterResponseDTO.Character
   var body: some View {
-
     HStack {
-      if let image = character.image,
+      if let image = character.image ?? "",
          let url = URL(string: image) {
         KFImage(url)
           .resizable()
@@ -26,15 +25,13 @@ struct CharacterListRowView: View {
           .foregroundColor(.gray)
       }
       VStack(alignment: .leading) {
-        Text(character.name )
+        Text(character.name ?? "")
           .font(.title3)
           .foregroundColor(.black)
           .redacted(reason: character.name == nil ? .placeholder : [])
       }
-
     }
   }
-
 }
 
 // struct CharacterListRowView_Previews: PreviewProvider {

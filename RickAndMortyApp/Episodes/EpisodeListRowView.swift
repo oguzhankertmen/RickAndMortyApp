@@ -8,15 +8,16 @@
 import SwiftUI
 
 struct EpisodeListRowView: View {
-  let episode: EpisodeModel
+  let episode: EpisodeResponseDTO.Episode
   var body: some View {
     HStack(alignment: .center) {
       VStack(alignment: .leading) {
-        Text(episode.name )
+        Text(episode.name ?? "")
           .foregroundColor(.black)
       }
       Spacer()
-      Text(episode.air_date )
+      Text(episode.airDate ?? "")
+
         .foregroundColor(.gray)
         .font(.footnote)
     }.redacted(reason: episode.name == nil ? .placeholder : [])

@@ -5,8 +5,8 @@
 //  Created by Oğuzhan KERTMEN on 9.05.2022.
 //
 
-import Foundation
 import Apollo
+import Foundation
 
 class Network {
   static let shared = Network()
